@@ -71,10 +71,11 @@ body {
     
     .login_header {
         text-align: center;
+        position: relative;
 
         .neon_title {
             position: absolute;
-            margin: 190px auto;
+            margin: 30px auto;
             
             width: 180px;
             height: 60px;
