@@ -1,0 +1,91 @@
+:root {
+    /* cores */
+    --primary_color: #BC13FE;
+    --secondary_color: #00FFFF;
+    --neutral_color: #040a1b; /* alterei achei melhor */
+    --cards_color: #1A191B;
+    --cell_color: #262627;
+    --light_color: #ffffff;
+
+    /* fonts */
+
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+body {
+    background-color: var(--neutral_color);
+    position: relative;
+}
+
+.balls {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+
+
+    .ball {
+        position: absolute;
+        width: 400px;
+        height: 400px;
+        border-radius: 50%;
+        filter: blur(10px);
+        opacity: 0.6;
+        
+        &:nth-child(1) {
+            color: #BC13FE;
+
+        }
+        &:nth-child(2) {
+            color: #0ff0fc91;
+
+        }
+
+    }
+}
+
+/* ======================================================================================
+                                        Page LOGIN
+========================================================================================*/
+
+.container_login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .login_header {
+        text-align: center;
+        
+        .login_title {
+            color: var(--primary_color);
+            font-size: 4rem;
+
+        }
+        .login_subtitle {
+            color: var(--secondary_color);
+            font-size: 1rem;
+            font-weight: lighter;
+        }
+
+    }
+    .login_box {
+        max-width: 90%;
+        height: 50vh;
+        background-color: var(--cards_color);
+        border-radius: 25px;
+
+        display: flex;
+        flex-direction: column;
+
+        h2 {
+            color: var(--light_color);
+        }
+    }
+}
