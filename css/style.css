@@ -47,7 +47,7 @@ body {
         filter: blur(120px);
         opacity: 1;
         animation: moveBalls 10s ease infinite alternate;
-
+    transition: transform 3s ease-in-out;
         
         &:nth-child(1) {
             background-color: #0ff0fc74;
@@ -108,7 +108,7 @@ body {
             position: absolute;
             margin: 30px auto;
             
-            width: 180px;
+            width: 80%;
             height: 60px;
             inset: -4px;
             background-color: rgba(221, 142, 255, 0.349);
@@ -147,9 +147,7 @@ body {
         border-radius: 25px;
         display: flex;
         flex-direction: column;
-        
         padding: 2rem 1.5rem;
-        
         font-weight: lighter;
         
 
