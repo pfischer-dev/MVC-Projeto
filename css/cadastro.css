@@ -8,6 +8,8 @@
     --cell_color: #262627;
     --light_color: #ffffff;
     --teste: #050A18;
+    --neonPink_color: rgba(221, 142, 255, 0.458);
+    
 
     --fontPrimary: "Space Grotesk", sans-serif;
 }
@@ -47,11 +49,11 @@ body {
         filter: blur(120px);
         opacity: 1;
         animation: moveBalls 10s ease infinite alternate;
-    transition: transform 3s ease-in-out;
+        transition: transform 3s ease-in-out;
         
         &:nth-child(1) {
-            background-color: #0ff0fc74;
-            /* background-color: #bb13fe6f; */
+            /* background-color: #0ff0fc74; */
+            background-color: #bb13fe6f;
             top: -220px;
             left: -220px;
             z-index: 0;
@@ -59,8 +61,8 @@ body {
 
         }
         &:nth-child(2) {
-            background-color: #bb13fe6f;
-            /* background-color: #0ff0fc74; */
+            /* background-color: #bb13fe6f; */
+            background-color: #0ff0fc74;
             bottom: -100px;
             right: -100px;
             z-index: 0;
@@ -90,3 +92,130 @@ body {
 /* ======================================================================================
                                         Page CADASTRO
 ========================================================================================*/
+.register_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    gap: .5rem;
+    min-height: 100vh;
+    
+    .register_header {
+        text-align: center;
+        position: relative;
+
+        .register_neon_title {
+            position: absolute;
+            margin: 30px auto;
+            
+            width: 80%;
+            height: 60px;
+            inset: -4px;
+            background-color: #00ffff4c;
+            filter: blur(30px);
+            border-radius: 60px;
+            opacity: 1;
+            transition: all 0.4s ease-in-out;
+
+            &:hover {
+                opacity: 1;
+                transform: scale(1.4);
+                background-color: #00ffff4c;
+
+            }
+        }
+        
+        .register_title {
+            color: var(--secondary_color);
+            font-size: 4.5rem;
+            z-index: 1;
+            font-family: "Space Grotesk", sans-serif;
+            letter-spacing: -2px;
+        }
+        .register_subtitle {
+            color: var(--primary_color);
+            font-size: 0.8rem;
+            font-weight: lighter;
+            letter-spacing: 5px;
+        }
+
+    }
+    .register_box {
+        width: 85%;
+        background-color: #2f34446b;
+        border: 1px solid var(--borderCards_color);
+        border-radius: 25px;
+        display: flex;
+        flex-direction: column;
+        padding: 1rem 1rem;
+        font-weight: lighter;
+        
+
+        .register_form {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            border: none;
+            font-weight: lighter;
+
+            h2 {
+                color: var(--light_color);
+                font-weight: 500;
+                font-size: 1.3rem;
+            }
+            p {
+                font-size: 0.7rem;
+                display: inline;
+                
+                
+            }
+    
+            .field {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                gap: 0.2rem;
+                font-size: 0.8rem;
+
+                input {
+                    padding: .4rem;
+                    border: 1px solid var(--borderCards_color);
+                    background-color: var(--cell_color);
+                    color: #4848498e;
+                    border-radius: 6px;
+                    
+                }
+            }
+            .register_btn {
+                font-size: 1rem;
+                font-family: var(--fontPrimary) ;
+                height: 3rem;
+                width: 60%;
+                background-color: var(--primary_color);
+                border: none;
+                margin: 0.4rem auto;
+            }
+
+            .termsSM {
+                text-align: justify;
+                p {
+                    font-size: 0.7rem;
+                }
+            }
+        }
+    }
+}
+
+/* ======================================================================================
+                                    RESPONSIVE Page Cadastro
+========================================================================================*/
+@media (min-width: 768px) {
+    .register_container {
+        max-width: 600px;
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+/* ======================================================================================== */

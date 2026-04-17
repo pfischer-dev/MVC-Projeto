@@ -90,7 +90,6 @@ body {
 /* ======================================================================================
                                         Page LOGIN
 ========================================================================================*/
-
 .login_container {
     display: flex;
     flex-direction: column;
@@ -200,8 +199,8 @@ body {
                 background-color: var(--secondary_color);
                 border: none;
             }
-
         }
+        
         .login_footer {
             margin-top: 2rem;
             width: 100%;

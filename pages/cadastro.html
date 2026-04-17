@@ -2,9 +2,10 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="stylesheet" href="../css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" >
+    <!-- link CSS -->
     <link rel="stylesheet" href="../css/cadastro.css">
     <title>Cadastro  - Estude na Rede Social</title>
 </head>
@@ -16,13 +17,47 @@
     </div>
 
     <!-- MAIN -->
-    <main class="login_container">
-        <header class="login_header">
-            <div class="neon_title"></div>
-            <h1 class="login_title">ShareMind</h1>
-            <h4 class="login_subtitle">Estude na Rede Social</h4>
+    <main class="register_container">
+        <header class="register_header">
+            <div class="register_neon_title"></div>
+            <h1 class="register_title">ShareMind</h1>
+            <h4 class="register_subtitle">Estude na Rede Social</h4>
         </header>
+        
+        <section class="register_box">
+            <!-- Formulário -->
+            <form class="register_form" action="#" method="post">
+                <h2>Comece a usar o ShareMind</h2>
+                <!-- <p>Cadastre - se e estude com seus amigos e toda uma comunidade.</p> -->
+                
+                <div class="field">
+                    <label for="nome">Nome completo</label>
+                    <input type="text" id="nome" name="nome" placeholder="Nome completo" required>
+                </div>
+                
+                <div class="field">
+                    <label for="email">Email</label>
+                    <input type="text" id="email" name="email" placeholder="usuario@email.com.br" required>
+                </div>
+                
+                <div class="field">
+                    <label for="user">Nome de Usuário</label>
+                    <input type="text" id="user" name="user" placeholder="user_123" required>
+                </div>
 
+                <div class="field">
+                    <label for="date">Data de Nascimento</label>
+                    <input type="date" id="date" name="date">
+                </div>
+
+                <div class="termsSM">
+                    <p>As pessoas que usam nosso serviço podem ter carregado suas informações de contato no ShareMind.</p><br>
+                    <p>Ao tocar em Enviar, você concorda em criar uma conta e em seguir os Termos, a Política de Privacidade  e a Política de Coockies do ShareMind.</p><br>
+                    
+                </div>
+                
+                <button class="register_btn" type="submit">Criar conta</button>
+            </form>
         
     </main>
 
