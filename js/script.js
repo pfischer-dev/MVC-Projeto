@@ -1,0 +1,4 @@
+const arrowBack = document.querySelector('.arrowBack').addEventListener('click', ()=> {
+    window.location.href = '../index.html';
+});
+

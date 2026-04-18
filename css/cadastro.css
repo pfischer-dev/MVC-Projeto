@@ -100,7 +100,29 @@ body {
     position: relative;
     gap: .5rem;
     min-height: 100vh;
-    
+    max-width: 500px;
+    margin: 0 auto;
+    .arrowBack {
+        position: absolute;
+        background-image: url(../assets/icons/arrowWhite.png);
+        background-position: top left;
+        background-size: contain;
+        z-index: 5;
+        width: 20px;
+        height: 20px;
+        top: 7%;
+        left: 0;
+        margin: 0.5rem;
+        /* opacity: 0.7; */
+        cursor: pointer;
+        transition: transform .2s ease-in-out;
+        
+        &:hover {
+            transform: translate(-2px, -2px);
+        }
+        
+    }
+
     .register_header {
         text-align: center;
         position: relative;
@@ -128,7 +150,7 @@ body {
         
         .register_title {
             color: var(--secondary_color);
-            font-size: 4.5rem;
+            font-size: 4rem;
             z-index: 1;
             font-family: "Space Grotesk", sans-serif;
             letter-spacing: -2px;
@@ -142,6 +164,7 @@ body {
 
     }
     .register_box {
+        
         width: 85%;
         background-color: #2f34446b;
         border: 1px solid var(--borderCards_color);
@@ -211,11 +234,18 @@ body {
 /* ======================================================================================
                                     RESPONSIVE Page Cadastro
 ========================================================================================*/
+@media (min-width: 500px) {
+    .arrowBack {
+        display: none;
+    }
+}
+
 @media (min-width: 768px) {
     .register_container {
-        max-width: 600px;
+        max-width: 500px;
         width: 100%;
         margin: 0 auto;
     }
+    
 }
 /* ======================================================================================== */
