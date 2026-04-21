@@ -1,20 +1,19 @@
 :root {
     /* cores */
     --primary_color: #BC13FE;
+    --primaryLight_color: rgba(221, 142, 255, 0.458);
     --secondary_color: #00FFFF;
+    --secondaryLight_color: #0ff0fc74;
     --neutral_color: #040a1b; /* alterei achei melhor */
     --cards_color: #1A191B;
     --borderCards_color: rgb(255 255 255 / 0.05);
     --cell_color: #262627;
     --light_color: #ffffff;
     --teste: #050A18;
-    --neonPink_color: rgba(221, 142, 255, 0.458);
     
 
     --fontPrimary: "Space Grotesk", sans-serif;
 }
-
-
 
 * {
     margin: 0;
@@ -53,7 +52,7 @@ body {
         
         &:nth-child(1) {
             /* background-color: #0ff0fc74; */
-            background-color: #bb13fe6f;
+            background-color: var(--primaryLight_color);
             top: -220px;
             left: -220px;
             z-index: 0;
@@ -62,7 +61,7 @@ body {
         }
         &:nth-child(2) {
             /* background-color: #bb13fe6f; */
-            background-color: #0ff0fc74;
+            background-color: var(--secondaryLight_color);
             bottom: -100px;
             right: -100px;
             z-index: 0;
@@ -117,10 +116,10 @@ body {
             justify-content: start;
             text-align: center;
             .arrowBack_img {
-                /* position: absolute; */
                 background-image: url(../assets/icons/arrowWhite.png);
                 background-position: top left;
                 background-size: contain;
+                background-repeat: no-repeat;
                 z-index: 5;
                 width: 20px;
                 height: 20px;
@@ -130,6 +129,7 @@ body {
                 cursor: pointer;
                 transition: transform .2s ease-in-out;
                 
+                
                 &:hover {
                     transform: translate(-2px, -2px);
                 }
@@ -138,8 +138,7 @@ body {
     
             .register_neon_title {
                 position: absolute;
-                margin: 30px auto;
-                
+                margin: 20px auto;
                 width: 80%;
                 height: 60px;
                 inset: -4px;
@@ -148,11 +147,14 @@ body {
                 border-radius: 60px;
                 opacity: 1;
                 transition: all 0.4s ease-in-out;
+                z-index: 5;
+                
+                
     
                 &:hover {
                     opacity: 1;
                     transform: scale(1.4);
-                    background-color: #00ffff4c;
+                    
     
                 }
             }
@@ -175,8 +177,8 @@ body {
         }
 
     }
+    
     .register_box {
-        
         width: 85%;
         max-width: 508px; /* testando */
         background-color: #2f34446b;
@@ -219,8 +221,9 @@ body {
                     padding: .4rem;
                     border: 1px solid var(--borderCards_color);
                     background-color: var(--cell_color);
-                    color: #4848498e;
+                    color: rgb(152, 144, 144);
                     border-radius: 6px;
+                    font-weight: lighter;
                     
                 }
             }
@@ -231,6 +234,7 @@ body {
                 width: 60%;
                 background-color: var(--primary_color);
                 border: none;
+                border-radius: 6px;
                 margin: 0.4rem auto;
             }
 
@@ -248,10 +252,11 @@ body {
                                     RESPONSIVE Page Cadastro
 ========================================================================================*/
 @media (min-width: 493px) {
-    .arrowBack {
+    .arrowBack_img {
         display: none;
     }
 }
+
 
 @media (min-width: 768px) {
     .register_container {

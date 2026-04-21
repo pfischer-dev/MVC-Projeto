@@ -7,3 +7,7 @@ const arrowBack = document.querySelector('.arrowBack').addEventListener('click',
 });
 
 /* ======================================================================================== */
+
+const createUserBtn = document.querySelector('.register_btn').addEventListener('click', () => {
+    window.location.href = '../pages/feed.html';
+});

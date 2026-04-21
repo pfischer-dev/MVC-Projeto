@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" >
+    <!-- link CSS -->
+    <link rel="stylesheet" href="../css/cad.css">
+    <title>Cadastro - Estude na Rede Social</title>
+</head>
+<body>
+    <!-- balls BG -->
+    <div class="balls">
+        <div class="ball"></div>
+        <div class="ball"></div>
+    </div>
+
+    <!-- MAIN -->
+    <main class="register_container">
+        
+        <header class="register_header">
+            <div class="arrowBack">
+                <div class="arrowBack_img"></div>
+                <div class="register_neon_title"></div>
+                <h1 class="register_title">ShareMind</h1>
+            </div>
+            
+            <h4 class="register_subtitle">Estude na Rede Social</h4>
+        </header>
+        <!-- section -->
+        <section class="register_cards">
+            
+            <article class="register_value">
+                <div class="headLine">
+                    <h1>Aprenda com outros estudantes</h1>
+                    <h3>Compartilhe conhecimento, organize seus estudos e evolua junto com a comunidade.</h3>
+                </div>
+                <ul class="benefit_list">
+                    <li>Feed de conteúdo educacional organizado por temas e matérias</li>
+                    <li>Conecte - se em grupos de estudos e outros estudantes.</li>
+                    <li>Compartilhe conteúdos e posts com ajuda da IA</li>
+                    <li>Organize seus estudos com trilhas inteligentes</li>
+                    <li>Mentoria MindIA.</li>
+                    
+                    
+                </ul>
+            </article>
+
+            <article class="register_box">
+            
+                <form class="register_form" action="#" method="post">
+                    <h2>Comece a usar o ShareMind</h2>
+                    <div class="field">
+                        <label for="nome">Nome completo</label>
+                        <input type="text" id="nome" name="nome" placeholder="Nome completo" required>
+                    </div>
+                    
+                    <div class="field">
+                        <label for="email">Email</label>
+                        <input type="text" id="email" name="email" placeholder="usuario@email.com.br" required>
+                    </div>
+                    
+                    <div class="field">
+                        <label for="user">Nome de Usuário</label>
+                        <input type="text" id="user" name="user" placeholder="user_123" required>
+                    </div>
+    
+                    <div class="field">
+                        <label for="date">Data de Nascimento</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="password">Senha (6 dígitos)</label>
+                        <input type="password" id="password" name="password" placeholder="******" required>
+                    </div>
+                    <button class="register_btn" type="submit">Criar conta</button>
+                </form>
+            </article>
+
+        </section>
+    </main>
+</body>

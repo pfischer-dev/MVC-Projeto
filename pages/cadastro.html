@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" >
     <!-- link CSS -->
     <link rel="stylesheet" href="../css/cadastro.css">
-    <title>Cadastro  - Estude na Rede Social</title>
+    <title>Cadastro - Estude na Rede Social</title>
 </head>
 <body>
     <!-- balls BG -->
@@ -28,12 +28,13 @@
             
             <h4 class="register_subtitle">Estude na Rede Social</h4>
         </header>
-        
+<!-- solucao talvez encontrada é criar uma section grid ,
+transformar essa section abaixo em article e criar mais um
+article -->
         <section class="register_box">
-            <!-- Formulário -->
+            
             <form class="register_form" action="#" method="post">
                 <h2>Comece a usar o ShareMind</h2>
-                <!-- <p>Cadastre - se e estude com seus amigos e toda uma comunidade.</p> -->
                 
                 <div class="field">
                     <label for="nome">Nome completo</label>
@@ -52,7 +53,7 @@
 
                 <div class="field">
                     <label for="date">Data de Nascimento</label>
-                    <input type="date" id="date" name="date">
+                    <input type="date" id="date" name="date" required>
                 </div>
 
                 <div class="termsSM">
@@ -63,7 +64,7 @@
                 
                 <button class="register_btn" type="submit">Criar conta</button>
             </form>
-        
+        </section>
     </main>
 
 
