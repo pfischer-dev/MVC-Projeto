@@ -1,17 +1,20 @@
 :root {
     /* cores */
     --primary_color: #BC13FE;
+    --primaryLight_color: rgba(221, 142, 255, 0.458);
     --secondary_color: #00FFFF;
+    --secondaryLight_color: #0ff0fc74;
     --neutral_color: #040a1b; /* alterei achei melhor */
     --cards_color: #1A191B;
     --borderCards_color: rgb(255 255 255 / 0.05);
     --cell_color: #262627;
     --light_color: #ffffff;
     --teste: #050A18;
-
+    --bgPost_color: #201F21;
+    
+    /* fonts */
     --fontPrimary: "Space Grotesk", sans-serif;
 }
-
 
 
 * {
@@ -33,6 +36,8 @@ body {
 /* ======================================================================================
                                         Page FEED
 ========================================================================================*/
+/* Header */
+
 
 .header_container {
     display: flex;
@@ -103,10 +108,12 @@ body {
         }
     }
 
+/* ======================================================================================
+                                        STORIES - FEED
+========================================================================================*/
     .stories {
-        background-color: #00FFFF;
+        
         width: 100%;
-
         display: flex;
         gap: 0.9rem;
         overflow-x: auto;
@@ -119,14 +126,102 @@ body {
             padding: 3px;
             flex-shrink: 0;
             cursor: pointer;
+
+            img {
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                object-fit: cover;
+                border: 2px solid #111;
+            }
     
         }
+        .story.unseen {
+            background: linear-gradient(45deg, #ff00cc, #00ffff);
+        }
+        .story.seen {
+            background: #555;
+        }
+    }
+}
+
+/* ======================================================================================
+                                        POSTS - FEED
+========================================================================================*/
+#feed {
+    display: flex;
+    overflow-x: auto;
+    gap: 0.5rem;
+    scroll-snap-type: x mandatory;
+    
+    .post_header {
+        display: flex;
+        align-items: center;
+        margin: 0.6rem;
+        
+        img {
+            border-radius: 50%;
+        
+        }
+        span {
+            color: var(--light_color);
+            font-size: .8rem;
+            z-index: 4;
+            margin: .6rem;
+
+        }
+
+    }
+    .post_img {
+        color: white;
+        scroll-snap-align: start;
+
     }
 
-    
+    .post_actions {
+        margin: 0.6rem;
+    }
+
+    .post_captions {
+        margin: 0.6rem;
+        padding: 0 0 10px;
+
+    }
 }
+
+
+
+
+
+
+
 
 /* ======================================================================================
                                         FOOTER - FEED
 ========================================================================================*/
+footer {
+    position: fixed;
+    width: 100%;
+    padding: .6rem;
+    bottom: 3rem;
+    display: flex;
+    justify-content: space-around;
 
+    .funcItem {
+        width: 90%;
+        padding: 0.4rem;
+        opacity: 0.9;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        background-color: var(--cell_color);
+        border-radius: 30px;
+        border: 1px solid var(--borderCards_color);
+        box-shadow: 0 0 10px var(--secondary_color);
+
+        img {
+            width: 50px;
+            height: 50px;
+        }
+    }
+}
