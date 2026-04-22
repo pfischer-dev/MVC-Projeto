@@ -1,7 +1,9 @@
 :root {
     /* cores */
     --primary_color: #BC13FE;
+    --primaryLight_color: rgba(221, 142, 255, 0.458);
     --secondary_color: #00FFFF;
+    --secondaryLight_color: #0ff0fc74;
     --neutral_color: #040a1b; /* alterei achei melhor */
     --cards_color: #1A191B;
     --borderCards_color: rgb(255 255 255 / 0.05);
@@ -176,9 +178,8 @@ body {
                 input {
                     padding: .8rem;
                     border: 1px solid var(--borderCards_color);
-                    /* border-radius: 1rem; */
                     background-color: var(--cell_color);
-                    color: #4848498e;
+                    color: var(--secondary_color);
                     
                 }
                 
