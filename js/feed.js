@@ -38,62 +38,124 @@ storiesData.forEach(story => {
 
 const posts = [
     {
+        id: 1,
         user: { name: "Paulo Fischer", avatar: "https://i.pravatar.cc/50?img=1" },
         content: { type: "image", url: "https://picsum.photos/400/300" },
-        caption: "Meu primeiro post", likes: "10" },
+        caption: "Meu primeiro post", likes: 10,
+        comments: [
+            {user: "Joana Prado", text: "Braboooo! Muito bom!"},
+            {user: "Paulo Fischer", text: "Olha q legal. Demais"}
+        ]},
 
     {
-        user: { name: "Joana Prado", avatar: "https://i.pravatar.cc/50?img=2"},
+        id: 2,
+        user: { name: "joana prado", avatar: "https://i.pravatar.cc/50?img=2"},
         content: { type: "image", url: "https://picsum.photos/400/301"},
-        caption: "Outro post sem graça", likes: "199" },
+        caption: "Outro post sem graça", likes: 199,
+        comments: []},
     
     {
-        user: { name: "Gabriel Gouveia", avatar: "https://i.pravatar.cc/50?img=3" },
+        id: 3,
+        user: { name: "gabriel gouveia", avatar: "https://i.pravatar.cc/50?img=3" },
         content: { type: "image", url: "https://picsum.photos/400/302" },
-        caption: "Viajando por ai", likes: "10" },
+        caption: "Viajando por ai", likes: 10,
+        comments: [] },
 
     {
-        user: { name: "Jaqueline Jaquiel", avatar: "https://i.pravatar.cc/50?img=4" },
+        id: 4,
+        user: { name: "jaqueline jaquiel", avatar: "https://i.pravatar.cc/50?img=4" },
         content: { type: "image", url: "https://picsum.photos/400/303" },
-        caption: "Viajando na balada", likes: "10" },
+        caption: "Viajando na balada", likes: 10,
+        comments: [] },
 
     {
-        user: { name: "Gabriel Gabo", avatar: "https://i.pravatar.cc/50?img=5" },
+        id: 5,
+        user: { name: "gabriel gabo", avatar: "https://i.pravatar.cc/50?img=5" },
         content: { type: "image", url: "https://picsum.photos/400/304" },
-        caption: "Quebrando Tudo", likes: "10" }
+        caption: "Quebrando Tudo", likes: 10,
+        comments: []}
 
     ];
 
 const feed = document.getElementById("feed");
 
-posts.forEach(post => {
-    const div = document.createElement("div");
-    div.classList.add("post");
-    div.innerHTML = `
-    <div class="post_header">
-        <img src="${post.user.avatar}" class="avatar">
-        <span>${post.user.name}</span>
-    </div>
-    
-    <img src="${post.content.url}" class="post_img">
+/* ======================================================================================
+                                    renderPosts()                
+========================================================================================*/
+function renderPosts() {
+    feed.innerHTML = "";
 
-    <div class="post_actions">
-        ❤️ ${post.likes}
-    </div>
-
-    <div class="post_captions">
-        ${post.caption}
-    </div>
-
-    <div class="coments">
+    posts.forEach(post => {
+        const div = document.createElement("div");
+        div.classList.add("post");
         
-    </div>
-    `
+        div.innerHTML = `
+        <div class="post_header">
+            <div class="post_header-left">
+                <img src="${post.user.avatar}" class="avatar">
+                <span>${post.user.name}</span>            
+            </div>
+            <div class="moreIcon"></div>
+        </div>
+        
+        <img src="${post.content.url}" class="post_img">
+        
+        <div class="post_actions">
+            ❤️ ${post.likes}
+        </div>
 
-    feed.appendChild(div);
-});
+        <div class="post_captions">
+            ${post.caption}
+        </div>
+    
+        <div class="comments">
+            ${post.comments.map(c => `
+                <p><strong>${c.user}</strong> ${c.text}</p>
+                `).join("")}
+        </div>
+        <div class="input_submit">
+            <input class="comment_input" type="text" placeholder="Comentar..." id="input-${post.id}">
+            <button onclick="enviarComment(${post.id})">Enviar</button>   
+        </div>
+        
+    
+        
+        `
+    
+        feed.appendChild(div);
+    });
+}
 
 /* ======================================================================================
-                                                    
+                                    ADD Comment()                
+========================================================================================*/
+function addComment(postId, text) {
+    const post = posts.find(p => p.id === postId);
+
+    if(!post) return;
+
+    post.comments.push(
+        {user: "usuario atual", text: text}
+    );
+    renderPosts();    
+
+}
+
+/* ======================================================================================
+                                    BOTAO enviarComment()                
 ========================================================================================*/
 
+function enviarComment(postId) {
+    const input = document.getElementById(`input-${postId}`);
+    const text = input.value;
+
+    if (!text.trim()) return;
+
+    addComment(postId, text);
+}
+
+/* ======================================================================================
+                                        INIT
+========================================================================================*/
+
+renderPosts();
