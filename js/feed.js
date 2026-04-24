@@ -118,8 +118,6 @@ function renderPosts() {
             <button onclick="enviarComment(${post.id})">Enviar</button>   
         </div>
         
-    
-        
         `
     
         feed.appendChild(div);
