@@ -1,32 +1,42 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <!-- fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" >
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
     <!-- css -->
     <link rel="stylesheet" href="css/global.css">
+
+    <!-- ✅ Google Identity (coloque no HEAD) -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+
     <title>ShareMind - Estude pela Rede Social</title>
 </head>
+
 <body>
     <!-- balls BG -->
     <div class="balls">
         <div class="ball"></div>
         <div class="ball"></div>
     </div>
-    
+
     <!-- MAIN -->
     <main class="login_container">
-        
+
         <header class="login_header">
-            <div class="neon_title">
-            </div>
+            <div class="neon_title"></div>
             <h1 class="login_title">ShareMind</h1>
             <h4 class="login_subtitle">Estude pela Rede Social</h4>
         </header>
+
         <section class="login_box">
+
             <!-- Formulário -->
             <form id="login_form" class="login_form" action="#" method="post">
 
@@ -34,7 +44,7 @@
                     <label for="nome">Email</label>
                     <input type="text" id="email" name="email" placeholder="usuario@email.com.br" required>
                 </div>
-                
+
                 <div class="field">
                     <div class="field_password">
                         <label for="senha">Senha</label>
@@ -42,22 +52,52 @@
                     </div>
                     <input type="password" id="senha" name="senha" placeholder="******" required>
                 </div>
-                
+
                 <button id="login_btn" class="login_btn" type="submit">Entrar</button>
             </form>
-            
+
             <div class="login_footer">
                 <div class="divisor">
                     <p> ou acesse com </p>
                 </div>
 
-                <figure class="access_gmail">
-                    <img src="assets/icons/gmail.png" alt="link para conexão via Gmail">
-                </figure>
+                <!--  CONFIG GOOGLE -->
+                <div id="g_id_onload"
+                    data-client_id="794442169204-a58dmkj68697or75rh620mtp2t7qljsr.apps.googleusercontent.com"
+                    data-callback="handleCredentialResponse"
+                    data-auto_select="false">
+                </div>
+
+                <!--  BOTÃO GOOGLE -->
+                <div class="g_id_signin"
+                    data-type="standard"
+                    data-size="large"
+                    data-theme="filled_black"
+                    data-text="continue_with"
+                    data-shape="pill">
+                </div>
+
             </div>
         </section>
+
         <h4>Não é cadastrado? <span><a href="pages/cad.html">Cadastre - se</a></span></h4>
     </main>
-    
+
+    <!-- SCRIPT FINAL -->
+    <script>
+        function handleCredentialResponse(response) {
+            const token = response.credential;
+
+            console.log("Login Google OK", token);
+
+            // salva login simples
+            localStorage.setItem("google_token", token);
+
+            // redireciona direto pro feed
+            window.location.href = "pages/feed.html";
+        }
+    </script>
+
 </body>
+
 </html>
