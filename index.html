@@ -13,13 +13,23 @@
     <!-- css -->
     <link rel="stylesheet" href="css/global.css">
 
-    <!-- ✅ Google Identity (coloque no HEAD) -->
+    <!--  Google Identity -->
     <script src="https://accounts.google.com/gsi/client" async defer></script>
 
     <title>ShareMind - Estude pela Rede Social</title>
+
+    <style>
+        /* ajuste específico do botão Google */
+        .google_login_wrapper {
+            margin-top: 30px; /* controla o quanto desce */
+            display: flex;
+            justify-content: center;
+        }
+    </style>
 </head>
 
 <body>
+
     <!-- balls BG -->
     <div class="balls">
         <div class="ball"></div>
@@ -61,20 +71,22 @@
                     <p> ou acesse com </p>
                 </div>
 
-                <!--  CONFIG GOOGLE -->
+                <!-- CONFIG GOOGLE -->
                 <div id="g_id_onload"
                     data-client_id="794442169204-a58dmkj68697or75rh620mtp2t7qljsr.apps.googleusercontent.com"
                     data-callback="handleCredentialResponse"
                     data-auto_select="false">
                 </div>
 
-                <!--  BOTÃO GOOGLE -->
-                <div class="g_id_signin"
-                    data-type="standard"
-                    data-size="large"
-                    data-theme="filled_black"
-                    data-text="continue_with"
-                    data-shape="pill">
+                <!-- WRAPPER COM ESPAÇAMENTO -->
+                <div class="google_login_wrapper">
+                    <div class="g_id_signin"
+                        data-type="standard"
+                        data-size="large"
+                        data-theme="filled_black"
+                        data-text="continue_with"
+                        data-shape="pill">
+                    </div>
                 </div>
 
             </div>
@@ -83,17 +95,15 @@
         <h4>Não é cadastrado? <span><a href="pages/cad.html">Cadastre - se</a></span></h4>
     </main>
 
-    <!-- SCRIPT FINAL -->
+    <!-- SCRIPT -->
     <script>
         function handleCredentialResponse(response) {
             const token = response.credential;
 
             console.log("Login Google OK", token);
 
-            // salva login simples
             localStorage.setItem("google_token", token);
 
-            // redireciona direto pro feed
             window.location.href = "pages/feed.html";
         }
     </script>
